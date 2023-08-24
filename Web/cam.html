@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PostureTech</title>
+        <style>
+            #videoElement {
+                    width: 1100px;
+                    height: 658px;
+                    background-color: white;
+                    display: inline-block;
+                    /* 좌우반전 */
+                    transform : rotateY(180deg);
+                    -webkit-transform: rotateY(180deg);
+                    -moz-transform: rotateY(180deg);
+            }
+        </style>
+        <script src="cam.js" defer></script>
+    </head>
+    <body>
+        <div class="CameraPage" style="width: 1440px; height: 1024px; position: relative; background: white">
+            <div class="Header" style="width: 1440px; height: 87px; left: 0px; top: 0px; position: absolute; background: white"></div>
+            <button type="button" onClick="location.href='video.html'"><div style="width: 104px; height: 35px; left: 1046px; top: 37px; position: absolute; color: black; font-size: 26px; font-family: Segoe UI; font-weight: 400; word-wrap: break-word">추천영상</div></button>
+            <button type="button" onClick="location.href='login.html'"><div style="width: 79px; height: 38px; left: 1335px; top: 37px; position: absolute; color: black; font-size: 26px; font-family: Segoe UI; font-weight: 400; word-wrap: break-word">로그인</div></button>
+            <button type="button" onClick="location.href='static.html'"><div style="width: 57px; height: 38px; left: 1210px; top: 37px; position: absolute; color: black; font-size: 26px; font-family: Segoe UI; font-weight: 400; word-wrap: break-word">통계</div></button>
+            <div style="width: 78px; height: 38px; left: 901px; top: 37px; position: absolute; color: #6A6A6A; font-size: 26px; font-family: Segoe UI; font-weight: 400; word-wrap: break-word">카메라</div>
+            <div class="Rectangle9" style="width: 1100px; height: 658px; left: 170px; top: 190px; position: absolute; background: #EBEBEB"><video autoplay="true" id="videoElement"></video></div>
+            <button type="button" onClick="location.href='cam_dark.html'"><img class="Rectangle14" style="width: 50px; height: 50px; left: 20px; top: 954px; position: absolute" src="images/blackmoon.png" /></button>
+            <div class="IconMadeByFreepikFromWwwFlaticonComIconMadeByCreatypeFromWwwFlaticonComIconMadeBySmashiconsFromWwwFlaticonCom" style="left: 1207px; top: 979px; position: absolute; color: black; font-size: 10px; font-family: Segoe UI; font-weight: 400; word-wrap: break-word">"Icon made by Freepik from www.flaticon.com"
+            <br/>"Icon made by Creatype from www.flaticon.com"
+            <br/>"Icon made by Smashicons from www.flaticon.com"</div>
+            <button type="button" onClick="location.href='main.html'"><img class="Logo" style="width: 287px; height: 58px; left: 20px; top: 29px; position: absolute" src="images/blacklogo.png" /></button>
+          </div>
+    </body>
+</html>
