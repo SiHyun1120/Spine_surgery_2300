@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PostureTech</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <div class="StaticPage" style="width: 1440px; height: 1024px; position: relative; background: white">
+            <div class="Header" style="width: 1440px; height: 87px; left: 0px; top: 0px; position: absolute; background: white"></div>
+            <button type="button" onClick="location.href='video.html'"><div style="width: 104px; height: 35px; left: 1046px; top: 37px; position: absolute; color: black; font-size: 26px; font-family: Segoe UI; font-weight: 400; word-wrap: break-word">추천영상</div></button>
+            <button type="button" onClick="location.href='login.html'"><div style="width: 79px; height: 38px; left: 1335px; top: 37px; position: absolute; color: black; font-size: 26px; font-family: Segoe UI; font-weight: 400; word-wrap: break-word">로그인</div></button>
+            <div style="width: 57px; height: 38px; left: 1212.5px; top: 37px; position: absolute; color: #6A6A6A; font-size: 26px; font-family: Segoe UI; font-weight: 400; word-wrap: break-word">통계</div>
+            <button type="button" onClick="location.href='cam.html'"><div style="width: 78px; height: 38px; left: 901px; top: 37px; position: absolute; color: black; font-size: 26px; font-family: Segoe UI; font-weight: 400; word-wrap: break-word">카메라</div></button>
+            <button type="button" onClick="location.href='static_dark.html'"><img class="Rectangle14" style="width: 50px; height: 50px; left: 20px; top: 954px; position: absolute" src="images/blackmoon.png" /></button>
+            <div class="Rectangle23" style="width: 236px; height: 71px; left: 602px; top: 825px; position: absolute; background: #EBEBEB; border-radius: 20px"></div>
+            <div id="chartContainer" style="width: 1306px; height: 604px; left: 67px; top: 188px; position: absolute; background: #EBEBEB; border-radius: 20px"></div>
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+            <script>
+                async function fetchDataAndDrawGraph() {
+                    try {
+                        const response = await axios.get('/data-graph');
+                        const { dates, textneckCounts, spineCounts } = response.data;
+
+                        const dataPoints = [];
+
+                        for (let i = 0; i < dates.length; i++) {
+                            dataPoints.push({
+                                x: new Date(dates[i]),
+                                y: textneckCounts[i],
+                                z: spineCounts[i]
+                            });
+                        }
+
+                        const chart = new CanvasJS.Chart("chartContainer", {
+                            title: {
+                                text: "거북목, 척추틀어짐 횟수"
+                            },
+                            axisX: {
+                                title: "Date",
+                                valueFormatString: "YYYY-MM-DD"
+                            },
+                            axisY: {
+                                title: "Count"
+                            },
+                            toolTip: {
+                                shared: true
+                            },
+                            
+                            backgroundColor: "#F2F2F2", // 원하는 배경색으로 변경
+
+                            data: [
+                                {
+                                    type: "spline",
+                                    name: "Textneck",
+                                    showInLegend: true,
+                                    dataPoints: dataPoints.map(point => ({ x: point.x, y: point.y }))
+                                },
+                                {
+                                    type: "spline",
+                                    name: "Spine",
+                                    showInLegend: true,
+                                    dataPoints: dataPoints.map(point => ({ x: point.x, y: point.z }))
+                                }
+                            ]
+                        });
+
+                        chart.render();
+                    } catch (error) {
+                        console.error('Error fetching and drawing data:', error);
+                    }
+                }
+
+                fetchDataAndDrawGraph();
+            </script>
+            
+            <button id="collectDataBtn"><div style="width: 202px; height: 36px; left: 620px; top: 842px; position: absolute; color: black; font-size: 26px; font-family: Inter; font-weight: 400; word-wrap: break-word">데이터 가져오기</div></button>
+            <script>
+                document.getElementById('collectDataBtn').addEventListener('click', async () => {
+                    try {
+                        const response = await axios.post('http://192.168.0.13:3000/send-data');
+                        console.log(response.data.message);
+                    } catch (error) {
+                        console.error('Error sending request to Jetson Nano:', error);
+                    }
+                });
+            </script>
+            
+            <div class="IconMadeByFreepikFromWwwFlaticonComIconMadeByCreatypeFromWwwFlaticonComIconMadeBySmashiconsFromWwwFlaticonCom" style="left: 1207px; top: 979px; position: absolute; color: black; font-size: 10px; font-family: Segoe UI; font-weight: 400; word-wrap: break-word">"Icon made by Freepik from www.flaticon.com"
+            <br/>"Icon made by Creatype from www.flaticon.com"
+            <br/>"Icon made by Smashicons from www.flaticon.com"</div>
+            <button type="button" onClick="location.href='main.html'"><img class="Logo" style="width: 287px; height: 58px; left: 20px; top: 29px; position: absolute" src="images/blacklogo.png" /></button>
+          </div>
+    </body>
+</html>
