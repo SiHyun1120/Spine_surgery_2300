@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PostureTech</title>
+        <style>
+            /* 입력 요소 스타일 수정 */
+            input[type="text"],
+            input[type="email"],
+            input[type="password"] {
+                border: none; /* 테두리 없애기 */
+                padding: 10px; /* 내부 여백 조정 */
+                width: 100%; /* 너비를 100%로 설정하여 부모 요소에 맞게 조정 */
+                height: 40px; /* 원하는 높이로 조정 */
+                font-size: 32px; /* 폰트 크기 조정 */
+                text-align: center; /* 텍스트 가운데 정렬 */
+                background-color: #EBEBEB;
+                border-radius: 30px; /* 테두리를 동그랗게 만들기 */
+                color: #393737;
+            }
+
+            /* placeholder 텍스트 스타일 수정 */
+            input::placeholder {
+            text-align: center; /* placeholder 텍스트 가운데 정렬 */
+            color: #393737;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="/loginpage" method="POST">
+            <div class="LoginPage" style="width: 1440px; height: 1024px; position: relative; background: white">
+                <div class="Header" style="width: 1440px; height: 87px; left: 0px; top: 0px; position: absolute; background: white"></div>
+                <button type="button" onClick="location.href='video.html'"><div style="width: 104px; height: 35px; left: 1046px; top: 37px; position: absolute; color: black; font-size: 26px; font-family: Segoe UI; font-weight: 400; word-wrap: break-word">추천영상</div></button>
+                <div style="width: 79px; height: 38px; left: 1335px; top: 37px; position: absolute; color: #6A6A6A; font-size: 26px; font-family: Segoe UI; font-weight: 400; word-wrap: break-word">로그인</div>
+                <button type="button" onClick="location.href='static.html'"><div style="width: 57px; height: 38px; left: 1210px; top: 37px; position: absolute; color: black; font-size: 26px; font-family: Segoe UI; font-weight: 400; word-wrap: break-word">통계</div></button>
+                <button type="button" onClick="location.href='cam.html'"><div style="width: 78px; height: 38px; left: 901px; top: 37px; position: absolute; color: black; font-size: 26px; font-family: Segoe UI; font-weight: 400; word-wrap: break-word">카메라</div></button>
+                <button type="button" onClick="location.href='login_dark.html'"><img class="Rectangle14" style="width: 50px; height: 50px; left: 20px; top: 954px; position: absolute" src="images/blackmoon.png" /></button>
+                <div class="Rectangle17" style="width: 300px; height: 56px; left: 561px; top: 463px; position: absolute; background: white; border-radius: 10px">
+                    <input type="password" name="password" placeholder="비밀번호">
+                </div>
+                <div class="Rectangle21" style="width: 175px; height: 56px; left: 561px; top: 547px; position: absolute; background: #EBEBEB; border-radius: 50px"></div>
+                <div class="Rectangle22" style="width: 124px; height: 56px; left: 754px; top: 547px; position: absolute; background: #EBEBEB; border-radius: 50px"></div>
+                <div class="Rectangle18" style="width: 300px; height: 56px; left: 561px; top: 378px; position: absolute; background: white; border-radius: 10px">
+                    <input type="text" name="username" placeholder="아이디">
+                </div>
+                <button type="button" onClick="location.href='regis.html'"><div style="width: 104px; height: 35px; left: 597px; top: 560px; position: absolute; color: black; font-size: 26px; font-family: Segoe UI; font-weight: 400; word-wrap: break-word">회원가입</div></button>
+                <button type="submit">
+                    <div style="width: 80px; height: 35px; left: 775px; top: 560px; position: absolute; color: black; font-size: 26px; font-family: Segoe UI; font-weight: 400; word-wrap: break-word">로그인</div>
+                </button>
+                
+                <div class="IconMadeByFreepikFromWwwFlaticonComIconMadeByCreatypeFromWwwFlaticonComIconMadeBySmashiconsFromWwwFlaticonCom" style="left: 1207px; top: 979px; position: absolute; color: black; font-size: 10px; font-family: Segoe UI; font-weight: 400; word-wrap: break-word">"Icon made by Freepik from www.flaticon.com"
+                <br/>"Icon made by Creatype from www.flaticon.com"
+                <br/>"Icon made by Smashicons from www.flaticon.com"</div>
+                <button type="button" onClick="location.href='main.html'"><img class="Logo" style="width: 287px; height: 58px; left: 20px; top: 29px; position: absolute" src="images/blacklogo.png" /></button>
+              </div>
+        </form>
+    </body>
+</html>
